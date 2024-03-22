@@ -78,4 +78,5 @@ def generate_cover_image():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    port = os.getenv('PORT', '5000')  # Use the PORT environment variable if set, otherwise default to 5000
+    app.run(host='0.0.0.0', port=port)
